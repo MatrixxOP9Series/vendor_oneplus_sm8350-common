@@ -6,11 +6,23 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/oneplus/sm8350-common
 
 PRODUCT_COPY_FILES += \
+    vendor/oneplus/sm8350-common/proprietary/odm/etc/dolby/multimedia_dolby_dax_default.xml:$(TARGET_COPY_OUT_ODM)/etc/dolby/multimedia_dolby_dax_default.xml \
     vendor/oneplus/sm8350-common/proprietary/odm/etc/init/android.hardware.drm@1.3-service.widevine.rc:$(TARGET_COPY_OUT_ODM)/etc/init/android.hardware.drm@1.3-service.widevine.rc \
+    vendor/oneplus/sm8350-common/proprietary/odm/etc/init/vendor.dolby_v3_6.hardware.dms360@2.0-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor.dolby_v3_6.hardware.dms360@2.0-service.rc \
     vendor/oneplus/sm8350-common/proprietary/odm/etc/init/vendor.pixelworks.hardware.display.iris-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor.pixelworks.hardware.display.iris-service.rc \
     vendor/oneplus/sm8350-common/proprietary/odm/etc/init/vendor.pixelworks.hardware.feature.irisfeature-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor.pixelworks.hardware.feature.irisfeature-service.rc \
     vendor/oneplus/sm8350-common/proprietary/odm/etc/izat.conf:$(TARGET_COPY_OUT_ODM)/etc/izat.conf \
+    vendor/oneplus/sm8350-common/proprietary/odm/etc/libdapparamstorage_v3_6_etc.so:$(TARGET_COPY_OUT_ODM)/etc/libdapparamstorage_v3_6_etc.so \
+    vendor/oneplus/sm8350-common/proprietary/odm/etc/libdeccfg_v3_6_etc.so:$(TARGET_COPY_OUT_ODM)/etc/libdeccfg_v3_6_etc.so \
+    vendor/oneplus/sm8350-common/proprietary/odm/etc/libdlbdsservice_v3_6_etc.so:$(TARGET_COPY_OUT_ODM)/etc/libdlbdsservice_v3_6_etc.so \
+    vendor/oneplus/sm8350-common/proprietary/odm/etc/libqtigef_etc.so:$(TARGET_COPY_OUT_ODM)/etc/libqtigef_etc.so \
+    vendor/oneplus/sm8350-common/proprietary/odm/etc/libstagefright_soft_ddpdec_etc.so:$(TARGET_COPY_OUT_ODM)/etc/libstagefright_soft_ddpdec_etc.so \
+    vendor/oneplus/sm8350-common/proprietary/odm/etc/libstagefrightdolby_etc.so:$(TARGET_COPY_OUT_ODM)/etc/libstagefrightdolby_etc.so \
     vendor/oneplus/sm8350-common/proprietary/odm/etc/sap.conf:$(TARGET_COPY_OUT_ODM)/etc/sap.conf \
+    vendor/oneplus/sm8350-common/proprietary/odm/etc/soundfx/libhwdap_v3_6_etc.so:$(TARGET_COPY_OUT_ODM)/etc/soundfx/libhwdap_v3_6_etc.so \
+    vendor/oneplus/sm8350-common/proprietary/odm/etc/soundfx/libswdap_v3_6_etc.so:$(TARGET_COPY_OUT_ODM)/etc/soundfx/libswdap_v3_6_etc.so \
+    vendor/oneplus/sm8350-common/proprietary/odm/etc/vendor.dolby_v3_6.hardware.dms360@2.0-impl_etc.so:$(TARGET_COPY_OUT_ODM)/etc/vendor.dolby_v3_6.hardware.dms360@2.0-impl_etc.so \
+    vendor/oneplus/sm8350-common/proprietary/odm/etc/vendor.dolby_v3_6.hardware.dms360@2.0_etc.so:$(TARGET_COPY_OUT_ODM)/etc/vendor.dolby_v3_6.hardware.dms360@2.0_etc.so \
     vendor/oneplus/sm8350-common/proprietary/odm/firmware/100ms_RTP.bin:$(TARGET_COPY_OUT_ODM)/firmware/100ms_RTP.bin \
     vendor/oneplus/sm8350-common/proprietary/odm/firmware/120ms_RTP.bin:$(TARGET_COPY_OUT_ODM)/firmware/120ms_RTP.bin \
     vendor/oneplus/sm8350-common/proprietary/odm/firmware/140ms_RTP.bin:$(TARGET_COPY_OUT_ODM)/firmware/140ms_RTP.bin \
@@ -1280,6 +1292,9 @@ PRODUCT_PACKAGES += \
     lib-virtual-modem-protos \
     libcommcenterfw \
     libcommcenterutils \
+    libdapparamstorage_v3_6 \
+    libdeccfg_v3_6 \
+    libdlbdsservice_v3_6 \
     libdmtp-protos-lite \
     libdmtpclient \
     liboemcrypto \
@@ -1293,9 +1308,14 @@ PRODUCT_PACKAGES += \
     libpwirisservice \
     libpwirissoft \
     libpwsoftirisPCS \
+    libqtigef \
     libsnapdragoncolor-pxlw \
     libwvhidl \
     libwvdrmengine \
+    libhwdap_v3_6 \
+    libswdap_v3_6 \
+    vendor.dolby_v3_6.hardware.dms360@2.0-impl \
+    vendor.dolby_v3_6.hardware.dms360@2.0 \
     vendor.oplus.hardware.appradio@1.0 \
     vendor.oplus.hardware.communicationcenter_compat@1.0 \
     vendor.oplus.hardware.cwb@1.0 \
@@ -1330,6 +1350,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.gnss@4.0-service.xml \
     vendor.qti.hardware.servicetracker@1.2-service.xml \
     manifest_android.hardware.drm@1.3-service.widevine.xml \
+    manifest_dax_dolby_v3_6.xml \
     manifest_oplus_cwb.xml \
     vendor.pixelworks.hardware.display.iris-service.xml \
     vendor.pixelworks.hardware.feature.irisfeature-service.xml \
@@ -1412,11 +1433,22 @@ PRODUCT_PACKAGES += \
     tcmd \
     wfdservice \
     android.hardware.drm@1.3-service.widevine \
+    vendor.dolby_v3_6.hardware.dms360@2.0-service \
     vendor.pixelworks.hardware.display.iris-service \
     vendor.pixelworks.hardware.feature.irisfeature-service \
     oplus_sensor_fb
 
 PRODUCT_PACKAGES += \
+    odm_lib_libdapparamstorage_v3_6_so \
+    odm_lib_libdeccfg_v3_6_so \
+    odm_lib_libdlbdsservice_v3_6_so \
+    odm_lib_libqtigef_so \
+    odm_lib_libstagefright_soft_ddpdec_so \
+    odm_lib_libstagefrightdolby_so \
+    odm_lib_soundfx_libhwdap_v3_6_so \
+    odm_lib_soundfx_libswdap_v3_6_so \
+    odm_lib_vendor_dolby_v3_6_hardware_dms360@2_0-impl_so \
+    odm_lib_vendor_dolby_v3_6_hardware_dms360@2_0_so \
     system_ext_priv-app_ims_lib_arm64_libimscamera_jni_so \
     system_ext_priv-app_ims_lib_arm64_libimsmedia_jni_so \
     system_ext_priv-app_WfdService_lib_arm64_libwfdnative_so \
